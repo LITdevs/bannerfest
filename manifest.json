@@ -1,0 +1,16 @@
+{
+    "name": "example-module",
+    "version": "1.0.1",
+    "author": "Skelly & Vukky",
+    "max_pain_version": "6.0.0",
+    "original_pain_version": "1.0.0",
+    "min_pain_version": "0.0.1",
+    "entrypoints": {
+        "testcommand": "src/index.js"
+    },
+    "apis": {
+        "example_api": "src/api.js"
+    },
+    "eventHandlers": ["messageReactionAdd"],
+    "locals": "src/locals.json"
+}

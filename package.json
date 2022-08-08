@@ -1,0 +1,19 @@
+{
+  "name": "example-module",
+  "version": "1.0.0",
+  "description": "Example module for the Painfull bot",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Painfull-Community/example-module.git"
+  },
+  "author": "Skelly & Vukky",
+  "license": "UNLICENCED",
+  "bugs": {
+    "url": "https://github.com/Painfull-Community/example-module/issues"
+  },
+  "homepage": "https://github.com/Painfull-Community/example-module#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.6"
+  }
+}
