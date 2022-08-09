@@ -7,13 +7,13 @@
     "type": "git",
     "url": "git+https://github.com/Painfull-Community/example-module.git"
   },
-  "author": "Skelly & Vukky",
+  "author": "Vukky",
   "license": "UNLICENCED",
   "bugs": {
     "url": "https://github.com/Painfull-Community/example-module/issues"
   },
   "homepage": "https://github.com/Painfull-Community/example-module#readme",
   "dependencies": {
-    "node-cron": "^3.0.1"
+    "cron": "^2.1.0"
   }
 }
