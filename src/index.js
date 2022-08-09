@@ -1,6 +1,6 @@
 let client;
 let config;
-const CronJob = require("cron").CronJob;
+var CronJob = require("cron").CronJob;
 
 function initAPIs(utils) {
     config = util.apis["ccm-ccm"].config["bannerfest"];
