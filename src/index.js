@@ -12,9 +12,7 @@ function initAPIs(utils) {
 
 function bannerify() {
     const availabanners = fs.readdirSync(`${__dirname}/../banners`).filter(fn => fn.startsWith(new Date().toLocaleString("en-GB", {day: "2-digit", month: "2-digit"}).replace("/", "-")));
-    client.users.fetch('708333380525228082').then(dm => {
-        dm.send(availabanners)
-    })
+    console.log(fs.readdirSync(`${__dirname}/../banners`), new Date().toLocaleString("en-GB", {day: "2-digit", month: "2-digit"}).replace("/", "-"))
 }
 
 module.exports = {
