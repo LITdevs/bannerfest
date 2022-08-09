@@ -5,7 +5,7 @@ var CronJob = require("cron").CronJob;
 const fs = require('fs');
 
 function initAPIs(utils) {
-    config = utils.apis["ccm-ccm"].config["bannerfest"];
+    config = utils.apis["ccm-ccm"].config["@litdevs/bannerfest"];
     if(!config.bannerState) config.bannerState = "";
     client = utils.client
     utilsy = utils
