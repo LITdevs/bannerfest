@@ -3,7 +3,7 @@ let config;
 var CronJob = require("cron").CronJob;
 
 function initAPIs(utils) {
-    config = util.apis["ccm-ccm"].config["bannerfest"];
+    config = utils.apis["ccm-ccm"].config["bannerfest"];
     client = utils.client
     bannerify()
     new CronJob('0 0 0 * * *', bannerify)
