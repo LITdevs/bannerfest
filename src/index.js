@@ -6,6 +6,7 @@ const fs = require('fs');
 
 function initAPIs(utils) {
     config = utils.apis["ccm-ccm"].config["bannerfest"];
+    if(!config.bannerState) config.bannerState = "";
     client = utils.client
     utilsy = utils
     bannerify()
@@ -16,10 +17,8 @@ function bannerify() {
     let decidedbanner;
     const availabanners = fs.readdirSync(`${__dirname}/../banners`).filter(fn => fn.startsWith(new Date().toLocaleString("en-GB", {day: "2-digit", month: "2-digit"}).replace("/", "-")));
     if(availabanners[0]) {
-        if(!config.bannerState) {
-            config.bannerState = "holiday"
-            utilsy.apis["ccm-ccm"].api.save("bannerfest")
-        }
+        config.bannerState = "holiday"
+        utilsy.apis["ccm-ccm"].api.save("bannerfest")
         decidedbanner = availabanners[0]
     } else if(config.bannerState == "holiday") {
         config.bannerState = "normal"
