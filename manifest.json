@@ -6,5 +6,8 @@
     "min_pain_version": "1.0.0",
     "apis": {
         "bannerfest": "src/index.js"
+    },
+    "entrypoints": {
+        "bnrtest": "src/test.js"
     }
 }
