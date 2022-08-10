@@ -1,6 +1,6 @@
 module.exports = {
     execute: async function(message, args, util) {
-        let config = util.apis["ccm-ccm"].config["ccm"];
+        let config = util.apis["ccm-ccm"].config["@litdevs/bannerfest"];
         let cls = util.apis["core-cls"].api;
         if(!util.config.owners.includes(message.author.id)) return message.reply(cls.getString("core", "error.permission"));
         if(!args[0]) return message.channel.send("use properly pls")
