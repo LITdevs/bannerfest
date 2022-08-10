@@ -24,16 +24,16 @@ function bannerify() {
         config.bannerState = "normal"
         utilsy.apis["ccm-ccm"].api.save("@litdevs/bannerfest")
         decidedbanner = "00-00-missing.png"
-    } else {
-        decidedbanner = "00-00-missing.png"
     }
-    client.guilds.fetch("868937321402204220").then(server => server.setBanner(`${__dirname}/../banners/${decidedbanner}`, "bannerfest update")
-        .then(function() {
-            if(config.bannerState == "holiday") client.channels.fetch('951903299236413500').then(channel=>channel.send(`hey everyone! we're now celebrating ${decidedbanner}! have fun!`))
-        })
-        .catch(err => {
-            console.log(err)
-        }))
+    if(decidedbanner) {
+        client.guilds.fetch("868937321402204220").then(server => server.setBanner(`${__dirname}/../banners/${decidedbanner}`, "bannerfest update")
+            .then(function() {
+                if(config.bannerState == "holiday") client.channels.fetch('951903299236413500').then(channel=>channel.send(`hey everyone! we're now celebrating ${decidedbanner}! have fun!`))
+            })
+            .catch(err => {
+                console.log(err)
+            }))
+    }
 }
 
 module.exports = {
