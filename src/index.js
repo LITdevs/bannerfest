@@ -29,7 +29,7 @@ function bannerify() {
     }
     client.guilds.fetch("868937321402204220").then(server => server.setBanner(`${__dirname}/../banners/${decidedbanner}`, "bannerfest update")
         .then(function() {
-            client.channels.fetch('951903299236413500').then(channel=>channel.send(`hey everyone! we're now celebrating ${decidedbanner}! have fun!`))
+            if(config.bannerState == "holiday") client.channels.fetch('951903299236413500').then(channel=>channel.send(`hey everyone! we're now celebrating ${decidedbanner}! have fun!`))
         })
         .catch(err => {
             console.log(err)
