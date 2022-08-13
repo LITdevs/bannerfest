@@ -9,8 +9,8 @@ function initAPIs(utils) {
     if(!config.bannerState) config.bannerState = "";
     client = utils.client
     utilsy = utils
-    bannerify()
-    new CronJob('0 0 0 * * *', bannerify)
+    //bannerify()
+    new CronJob('0 0 0 * * *', bannerify).start()
 }
 
 function bannerify() {
@@ -19,7 +19,11 @@ function bannerify() {
     if(availabanners[0]) {
         config.bannerState = "holiday"
         utilsy.apis["ccm-ccm"].api.save("@litdevs/bannerfest")
-        decidedbanner = availabanners[0]
+        if(availabanners.length > 1) {
+            decidedbanner = availabanners[Math.floor(Math.random()*availabanners.length)];
+        } else {
+            decidedbanner = availabanners[0]
+        }
     } else if(config.bannerState == "holiday") {
         config.bannerState = "normal"
         utilsy.apis["ccm-ccm"].api.save("@litdevs/bannerfest")
