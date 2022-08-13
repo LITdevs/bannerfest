@@ -10,7 +10,7 @@ function initAPIs(utils) {
     client = utils.client
     utilsy = utils
     bannerify()
-    new CronJob('0 * * * * *', bannerify).start()
+    new CronJob('0 0 0 * * *', bannerify).start()
 }
 
 function bannerify() {
