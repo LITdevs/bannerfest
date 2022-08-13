@@ -9,7 +9,7 @@ function initAPIs(utils) {
     if(!config.bannerState) config.bannerState = "";
     client = utils.client
     utilsy = utils
-    //bannerify()
+    bannerify()
     new CronJob('0 0 0 * * *', bannerify).start()
 }
 
@@ -29,6 +29,7 @@ function bannerify() {
         utilsy.apis["ccm-ccm"].api.save("@litdevs/bannerfest")
         decidedbanner = "00-00-missing.png"
     }
+    console.log(availabanners, config.bannerState, decidedbanner);
     if(decidedbanner) {
         client.guilds.fetch("868937321402204220").then(server => server.setBanner(`${__dirname}/../banners/${decidedbanner}`, "bannerfest update")
             .then(function() {
