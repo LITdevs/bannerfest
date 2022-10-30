@@ -28,7 +28,7 @@ function bannerify() {
         const grabbag = fs.readdirSync(`${__dirname}/../banners/grabbag`)
         config.bannerState = "normal"
         utilsy.apis["ccm-ccm"].api.save("@litdevs/bannerfest")
-        decidedbanner = grabbag[Math.floor(Math.random() * grabbag.length)] 
+        decidedbanner = "grabbag/" + grabbag[Math.floor(Math.random() * grabbag.length)] 
     }
     console.log(availabanners, config.bannerState, decidedbanner);
     if(decidedbanner) {
