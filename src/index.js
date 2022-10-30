@@ -24,10 +24,11 @@ function bannerify() {
         } else {
             decidedbanner = availabanners[0]
         }
-    } else if(config.bannerState == "holiday") {
+    } else {
+        const grabbag = fs.readdirSync(`${__dirname}/../banners/grabbag`)
         config.bannerState = "normal"
         utilsy.apis["ccm-ccm"].api.save("@litdevs/bannerfest")
-        decidedbanner = "00-00-missing.png"
+        decidedbanner = grabbag[Math.floor(Math.random() * grabbag.length)] 
     }
     console.log(availabanners, config.bannerState, decidedbanner);
     if(decidedbanner) {
