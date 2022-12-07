@@ -47,7 +47,7 @@ function bannerify() {
             content: `hey everyone! we're now celebrating ${decidedbanner}! have fun!`,
             files: [{
                 attachment: `${__dirname}/../banners/${decidedbanner}`,
-                name: "${decidedbanner}"
+                name: `${decidedbanner}`
             }]
         }));
     }
