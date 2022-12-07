@@ -42,7 +42,7 @@ function bannerify() {
     }
     console.log(availabanners, config.bannerState, decidedbanner);
     if(decidedbanner) {
-        if(serverHasBanner) client.guilds.fetch("868937321402204220").then(server => server.setBanner(`${__dirname}/../banners/${decidedbanner}`, "bannerfest update");
+        if(serverHasBanner) client.guilds.fetch("868937321402204220").then(server => server.setBanner(`${__dirname}/../banners/${decidedbanner}`, "bannerfest update"));
         client.channels.fetch('951903299236413500').then(channel=>channel.send({
             content: `hey everyone! we're now celebrating ${decidedbanner}! have fun!`,
             files: [{
