@@ -1,6 +1,7 @@
 let client;
 let config;
 let utilsy;
+let serverHasBanner;
 var CronJob = require("cron").CronJob;
 const fs = require('fs');
 
@@ -21,6 +22,8 @@ function initAPIs(utils) {
 * Get banner or something idk i cant read
 */
 function bannerify() {
+    client.guilds.fetch("868937321402204220").then(server => serverHasBanner = server.features.includes("BANNER"))
+
     let decidedbanner;
     const availabanners = fs.readdirSync(`${__dirname}/../banners`).filter(fn => fn.startsWith(new Date().toLocaleString("en-GB", {day: "2-digit", month: "2-digit"}).replace("/", "-")));
     if(availabanners[0]) {
@@ -39,13 +42,14 @@ function bannerify() {
     }
     console.log(availabanners, config.bannerState, decidedbanner);
     if(decidedbanner) {
-        client.guilds.fetch("868937321402204220").then(server => server.setBanner(`${__dirname}/../banners/${decidedbanner}`, "bannerfest update")
-            .then(function() {
-                if(config.bannerState == "holiday") client.channels.fetch('951903299236413500').then(channel=>channel.send(`hey everyone! we're now celebrating ${decidedbanner}! have fun!`))
-            })
-            .catch(err => {
-                console.log(err)
-            }))
+        if(serverHasBanner) client.guilds.fetch("868937321402204220").then(server => server.setBanner(`${__dirname}/../banners/${decidedbanner}`, "bannerfest update");
+        client.channels.fetch('951903299236413500').then(channel=>channel.send({
+            content: `hey everyone! we're now celebrating ${decidedbanner}! have fun!`,
+            files: [{
+                attachment: `${__dirname}/../banners/${decidedbanner}`,
+                name: "banner.png"
+            }]
+        }));
     }
 }
 
