@@ -4,6 +4,10 @@ let utilsy;
 var CronJob = require("cron").CronJob;
 const fs = require('fs');
 
+/**
+* Initilaize the APIs
+* Start a cron job
+*/
 function initAPIs(utils) {
     config = utils.apis["ccm-ccm"].config["@litdevs/bannerfest"];
     if(!config.bannerState) config.bannerState = "";
@@ -13,6 +17,9 @@ function initAPIs(utils) {
     new CronJob('0 0 0 * * *', bannerify).start()
 }
 
+/**
+* Get banner or something idk i cant read
+*/
 function bannerify() {
     let decidedbanner;
     const availabanners = fs.readdirSync(`${__dirname}/../banners`).filter(fn => fn.startsWith(new Date().toLocaleString("en-GB", {day: "2-digit", month: "2-digit"}).replace("/", "-")));
