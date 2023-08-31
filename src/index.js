@@ -21,8 +21,9 @@ function initAPIs(utils) {
 /**
 * Get banner or something idk i cant read
 */
-function bannerify() {
-    client.guilds.fetch("868937321402204220").then(server => serverHasBanner = server.features.includes("BANNER"))
+async function bannerify() {
+    let server = await client.guilds.fetch("868937321402204220")
+    serverHasBanner = server.features.includes("BANNER")
 
     let decidedbanner;
     const availabanners = fs.readdirSync(`${__dirname}/../banners`).filter(fn => fn.startsWith(new Date().toLocaleString("en-GB", {day: "2-digit", month: "2-digit"}).replace("/", "-")));
